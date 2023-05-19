@@ -21,7 +21,5 @@ export default class MoviesServices {
 
     return MovieSchema.findById(id);
   }
-
-  
 }
 

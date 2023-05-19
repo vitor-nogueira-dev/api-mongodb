@@ -9,5 +9,8 @@ export default class MoviesServices {
   public static async create(movie: TMovie) { // post
     await MovieSchema.create(movie);
   }
+  public static async read(): Promise<TMovie[]> { // post
+    return MovieSchema.find();
+  }
 }
 

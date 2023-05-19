@@ -11,6 +11,7 @@ class MoviesRouter {
     
     private routes() {
         this.router.post('/', MoviesController.create);
+        this.router.get('/', MoviesController.read);
     }
 }
 

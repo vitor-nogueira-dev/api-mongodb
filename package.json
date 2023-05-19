@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha ./src/tests/**/*.test.ts --require ts-node/register --exit",
     "test:cov": "nyc --reporter=html --reporter=text mocha ./src/tests/**/*.test.ts --require ts-node/register --exit",
-    "start": "nodemon --exec ts-node src/index.ts"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "keywords": [],
   "author": "",
@@ -42,6 +44,7 @@
     "nodemon": "^2.0.22",
     "nyc": "^15.1.0",
     "sinon": "^15.1.0",
+    "sucrase": "^3.32.0",
     "typescript": "^5.0.4"
   }
 }

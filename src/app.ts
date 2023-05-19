@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import mongoose, { ConnectOptions } from 'mongoose';
-
+import MoviesRouter from './routes/movies.routes';
 
 export class App {
     public app: Application;
@@ -29,5 +29,6 @@ export class App {
         this.app.get('/', (req, res) => {
             res.send('Hello World');
         })
+        this.app.use('/movies', MoviesRouter);
     }
 }

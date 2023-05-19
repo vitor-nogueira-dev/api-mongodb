@@ -13,6 +13,7 @@ class MoviesRouter {
         this.router.post('/', MoviesController.create);
         this.router.get('/', MoviesController.read);
         this.router.get('/:id', MoviesController.readById);
+        this.router.put('/:id', MoviesController.update);
     }
 }
 

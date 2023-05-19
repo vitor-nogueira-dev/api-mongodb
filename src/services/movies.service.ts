@@ -17,9 +17,11 @@ export default class MoviesServices {
 
   public static async readById(id: string): Promise<TMovie | null> { // readById
     if ( !isValidObjectId(id) ) throw new Error('Invalid id');
-    // MovieSchema.findOneAndUpdate({ _id: id }, { $set: { title: '1' } });
-
     return MovieSchema.findById(id);
+  }
+  public static async update(id: string, movie: TMovie) { // update
+    if ( !isValidObjectId(id) ) throw new Error('Invalid id');
+    await MovieSchema.findByIdAndUpdate(id, movie);
   }
 }
 

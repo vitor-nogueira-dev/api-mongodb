@@ -38,7 +38,14 @@ export default class MoviesController {
       return res.status(404).json({ message: (error as Error).message });
     }
   }
-  
+  public static async delete(req: Request, res: Response) { // delete
+    try {
+      await MoviesServices.delete(req.params.id);
+      return res.status(200).json({ message: 'Movie deleted' });
+    } catch (error) {
+      return res.status(404).json({ message: (error as Error).message });
+    }
+  }
 
 }
 
